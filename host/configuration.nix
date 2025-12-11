@@ -22,9 +22,11 @@
     ];
   };
 
-  services.xserver.enable = true;
-  services.xserver.autoRepeatDelay = 200;
-  services.xserver.autoRepeatInterval = 35;
+  services.xserver = {
+    enable = true;
+    autoRepeatDelay = 200;
+    autoRepeatInterval = 35;
+  };
 
   services.desktopManager.gnome.enable = true;
 
