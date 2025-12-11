@@ -3,6 +3,7 @@
 {
   imports = [
     ./common/git
+    ./desktop/gnome
   ];
 
   home.username = "wasa";
@@ -26,7 +27,6 @@
     terminator
     rkvm
     telegram-desktop
-    pinentry-gnome3 # TODO put in gnome config
   ];
 }
 
