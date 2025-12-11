@@ -17,10 +17,13 @@
   users.users.wasa = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
+    shell = pkgs.zsh;
     packages = with pkgs; [
       tree
     ];
   };
+
+  programs.zsh.enable = true;
 
   services.xserver.enable = true;
 

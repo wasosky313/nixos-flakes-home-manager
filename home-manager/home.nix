@@ -3,6 +3,7 @@
 {
   imports = [
     ./common/git
+    ./common/oh-my-zsh
     ./desktop/gnome
   ];
 
