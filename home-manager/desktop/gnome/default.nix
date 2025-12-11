@@ -7,11 +7,11 @@
   ];
 
   dconf.settings = {
-    # swap ESC and CAPS LOCK keys
     "org/gnome/desktop/input-sources" = {
       sources = [
         (lib.gvariant.mkTuple [ "xkb" "us+intl" ])
       ];
+      # swap ESC and CAPS LOCK keys
       xkb-options = [ "caps:swapescape" ];
     };
   };
