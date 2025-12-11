@@ -22,6 +22,7 @@
     terminator
     rkvm
     telegram-desktop
+    pinentry-gnome3 # TODO put in gnome config
   ];
 
   # TODO send to particular dir
@@ -34,7 +35,7 @@
       };
     };
     signing = {
-      key = "1653B52127C182C2";
+      key = "B99BD7CB52F8B2BB";
       signByDefault = true;
     };
   };
