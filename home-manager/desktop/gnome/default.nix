@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     pinentry-gnome3
+    gnome-extension-manager
   ];
 
   dconf.settings = {
