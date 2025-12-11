@@ -1,60 +1,42 @@
-# This is your home-manager configuration file
-# Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
+{ config, pkgs, ... }:
 
-{ inputs, lib, config, osConfig, pkgs, ... }:
-let
+{
+  home.username = "wasa";
+  home.homeDirectory = "/home/wasa";
+  home.stateVersion = "25.11";
 
-
-in
-  {
-  imports = [
-    inputs.nix-colors.homeManagerModule
-
-    ./common
-    ./desktop/hyprland
-    ./features/gh.nix
-  ];
-
-  home = {
-    username = "wasa";
-    homeDirectory = "/home/wasa";
+  programs.bash = {
+    enable = true;
+    shellAliases = {
+      btw = "echo i use nixos, btw";
+    };
   };
-
-  desktops.hyprland = {
-    enable = lib.mkIf (osConfig.wasosky.desktop == "hyprland") true;
-    wallpaper = ../wallpapers/wallpaper1.jpg;
-  };
-
-  colorScheme = inputs.nix-colors.colorSchemes.tokyo-city-dark;
-
-  programs.home-manager.enable = true;
 
   home.packages = with pkgs; [ 
-    aichat
-    bottom
-    chromium
-    google-chrome
-    firefox
-    foliate
-    #idea-community-fhs
-    #jetbrains.idea-community
-    #jetbrains.pycharm-community
-    jq
     lazydocker
     lazygit
     libreoffice
     # logseq
     mpv
-    postman
-    scrcpy
     nemo
-    # grim # to take screen-shot TODO relocate
-    # slurp # TODO relocate
+    terminator
+    rkvm
+    telegram-desktop
   ];
 
-  # Nicely reload system units when changing configs
-  systemd.user.startServices = "sd-switch";
-
-  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "24.05";
+  # TODO send to particular dir
+  programs.git = {
+    enable = true;
+    settings = {
+      user = {
+	name = "Andy Jimenez Reyes";
+	email = "wasosky313@gmail.com";
+      };
+    };
+    signing = {
+      key = "1653B52127C182C2";
+      signByDefault = true;
+    };
+  };
 }
+
