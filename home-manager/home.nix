@@ -23,7 +23,7 @@
     lazydocker
     lazygit
     libreoffice
-    # logseq
+    logseq
     mpv
     nemo
     terminator
