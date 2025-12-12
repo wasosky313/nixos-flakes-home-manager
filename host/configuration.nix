@@ -4,6 +4,7 @@
   imports =
     [
       ./hardware-configuration.nix
+      ./modules/rkvm-client.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
