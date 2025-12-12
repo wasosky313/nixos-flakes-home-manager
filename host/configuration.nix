@@ -24,7 +24,7 @@
     ];
   };
 
-  programs.zsh.enable = true;
+  nixpkgs.config.allowUnfree = true;
 
   services.xserver.enable = true;
 
@@ -36,7 +36,7 @@
     enable = true;
   };
 
-  nixpkgs.config.allowUnfree = true;
+  programs.zsh.enable = true;
   programs.firefox.enable = true;
   environment.systemPackages = with pkgs; [
     vim
@@ -48,6 +48,16 @@
     brave
     gnupg
   ];
+  
+  # Flatpak
+  services.flatpak.enable = true;
+  systemd.services.flatpak-repo = {
+    wantedBy = [ "multi-user.target" ];
+    path = [ pkgs.flatpak ];
+    script = ''
+      flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    '';
+  };
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
