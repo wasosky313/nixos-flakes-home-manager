@@ -29,6 +29,8 @@
     terminator
     rkvm
     telegram-desktop
+    qbittorrent
+    vlc
   ];
 }
 
