@@ -36,6 +36,10 @@
     displayManager.gdm.enable = true;
     openssh.enable = true;
     flatpak.enable = true;
+    jellyfin = {
+      enable = true;
+      openFirewall = true;
+    };
   };
 
   systemd.services = {
