@@ -15,6 +15,10 @@
   networking = {
     hostName = "nixos";
     networkmanager.enable = true;
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [ 22 ]; # SSH
+    };
   };
 
   time.timeZone = "America/Sao_Paulo";
