@@ -39,7 +39,7 @@
     displayManager.gdm.enable = true;
     desktopManager = {
       gnome.enable = true;
-      cosmic.enable = true;
+      # cosmic.enable = true;
     };
     openssh.enable = true;
     flatpak.enable = true;
