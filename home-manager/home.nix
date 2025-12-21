@@ -31,6 +31,7 @@
     telegram-desktop
     qbittorrent
     vlc
+    postgresql_17
   ];
 }
 
