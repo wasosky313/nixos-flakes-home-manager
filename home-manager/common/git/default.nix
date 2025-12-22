@@ -1,19 +1,17 @@
-{...}: {
+{ config, pkgs, ... }:
+
+{
   programs.git = {
     enable = true;
-    userName = "Andy Jimenez Reyes";
-    userEmail = "wasosky313@gmail.com";
-    signing = {
-      key = "839F81F7210FA5D1";
-      signByDefault = true;
+    settings = {
+        user = {
+          name = "Andy Jimenez Reyes";
+          email = "wasosky313@gmail.com";
+        };
     };
-    aliases = {
-      l = "log --pretty=format:'%C(yellow)%h%Creset %ad | %Cgreen%s%Creset %Cred%d%Creset %Cblue[%an]' --date=short";
-      s = "status -s";
-      c = "commit -m";
-      cs = "commit -S -m";
-      f = "fetch";
-      ai = "commit -a";
+    signing = {
+      key = "B99BD7CB52F8B2BB";
+      signByDefault = true;
     };
   };
 }
