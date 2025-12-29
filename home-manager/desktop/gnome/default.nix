@@ -15,5 +15,15 @@
       # swap ESC and CAPS LOCK keys
       xkb-options = [ "caps:swapescape" ];
     };
+
+    "org/gnome/shell" = {
+      favorite-apps = [
+        "com.google.Chrome.desktop"
+        "code.desktop"
+        "brave-browser.desktop"
+        "org.gnome.Nautilus.desktop"
+        "org.gnome.Console.desktop"
+      ];
+    };
   };
 }
