@@ -5,6 +5,7 @@
     [
       ./hardware-configuration.nix
       ./modules/rkvm-client.nix
+      ./modules/vsftpd.nix
     ];
 
   boot.loader = {
