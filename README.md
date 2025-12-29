@@ -13,6 +13,9 @@
 - Update `userName`, `userEmail`, and `signing.key` with your information
 - If not using GPG signing, remove or set `signByDefault = false`
 
+## Reference
+- https://www.tonybtw.com/tutorial/nixos-from-scratch/
+
 TODO
  - manage secrets (sops-nix or something like this)
  - manage new pkgs
