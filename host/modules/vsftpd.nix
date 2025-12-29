@@ -19,6 +19,7 @@
     anonymousMkdirEnable = false;
     chrootlocalUser = true;
     allowWriteableChroot = true;
+    localRoot = "/home/media";
     extraConfig = ''
       pasv_min_port=50000
       pasv_max_port=50100
