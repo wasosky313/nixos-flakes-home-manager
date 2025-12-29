@@ -6,6 +6,7 @@
       ./hardware-configuration.nix
       ./modules/rkvm-client.nix
       ./modules/vsftpd.nix
+      ./modules/programs.nix
     ];
 
   boot.loader = {
@@ -58,11 +59,6 @@
         flatpak remote-add --if-not-exists --no-gpg-verify flathub https://flathub.org/repo/flathub.flatpakrepo
       '';
     };
-  };
-
-  programs = {
-    zsh.enable = true;
-    firefox.enable = true;
   };
   
   environment.systemPackages = with pkgs; [
