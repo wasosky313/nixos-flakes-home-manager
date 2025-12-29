@@ -73,6 +73,7 @@
     vscode
     brave
     gnupg
+    fastfetch
   ];
 
   fonts.packages = with pkgs; [
