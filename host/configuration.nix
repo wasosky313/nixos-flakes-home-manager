@@ -4,11 +4,11 @@
   imports =
     [
       ./hardware-configuration.nix
+      ./modules/services.nix
+      ./modules/packages.nix
+      ./modules/programs.nix
       ./modules/rkvm-client.nix
       ./modules/vsftpd.nix
-      ./modules/programs.nix
-      ./modules/packages.nix
-      ./modules/services.nix
     ];
 
   boot.loader = {
