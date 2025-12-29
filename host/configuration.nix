@@ -8,6 +8,7 @@
       ./modules/vsftpd.nix
       ./modules/programs.nix
       ./modules/packages.nix
+      ./modules/services.nix
     ];
 
   boot.loader = {
@@ -36,31 +37,6 @@
   };
 
   nixpkgs.config.allowUnfree = true;
-
-  services = {
-    xserver.enable = true;
-    displayManager.gdm.enable = true;
-    desktopManager = {
-      gnome.enable = true;
-      # cosmic.enable = true;
-    };
-    openssh.enable = true;
-    flatpak.enable = true;
-    jellyfin = {
-      enable = true;
-      openFirewall = true;
-    };
-  };
-
-  systemd.services = {
-    flatpak-repo = {
-      wantedBy = [ "multi-user.target" ];
-      path = [ pkgs.flatpak ];
-      script = ''
-        flatpak remote-add --if-not-exists --no-gpg-verify flathub https://flathub.org/repo/flathub.flatpakrepo
-      '';
-    };
-  };
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
