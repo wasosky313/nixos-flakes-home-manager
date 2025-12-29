@@ -22,6 +22,12 @@
     firewall = {
       enable = true;
       allowedTCPPorts = [ 22 ]; # SSH
+      allowedTCPPortRanges = [
+        { from = 1714; to = 1764; } # GNOME Connect
+      ];
+      allowedUDPPortRanges = [
+        { from = 1714; to = 1764; } # GNOME Connect
+      ];
     };
   };
 
