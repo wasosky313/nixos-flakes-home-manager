@@ -7,6 +7,7 @@
       ./modules/rkvm-client.nix
       ./modules/vsftpd.nix
       ./modules/programs.nix
+      ./modules/packages.nix
     ];
 
   boot.loader = {
@@ -60,18 +61,6 @@
       '';
     };
   };
-  
-  environment.systemPackages = with pkgs; [
-    vim
-    neovim
-    wget
-    git
-    google-chrome
-    vscode
-    brave
-    gnupg
-    fastfetch
-  ];
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
