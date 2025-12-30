@@ -55,7 +55,7 @@
         "code.desktop"
         "brave-browser.desktop"
         "terminator.desktop"
-        # "org.gnome.Console.desktop"
+        "org.gnome.Console.desktop"
         "Logseq.desktop"
       ];
       
