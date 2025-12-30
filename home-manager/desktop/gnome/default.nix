@@ -4,6 +4,8 @@
   home.packages = with pkgs; [
     pinentry-gnome3
     gnome-extension-manager
+    gnome-tweaks
+    gnome-themes-extra
     gnomeExtensions.appindicator
     gnomeExtensions.vitals
     gnomeExtensions.dash-to-dock
@@ -12,7 +14,27 @@
     gnomeExtensions.gsconnect
   ];
 
+  # Config GTK for legacy applications like Nemo
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome-themes-extra;
+    };
+    gtk3.extraConfig = {
+      gtk-application-prefer-dark-theme = true;
+    };
+    gtk4.extraConfig = {
+      gtk-application-prefer-dark-theme = true;
+    };
+  };
+
   dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+      gtk-theme = "Adwaita-dark";
+    };
+
     "org/gnome/desktop/input-sources" = {
       sources = [
         (lib.gvariant.mkTuple [ "xkb" "us" ])
