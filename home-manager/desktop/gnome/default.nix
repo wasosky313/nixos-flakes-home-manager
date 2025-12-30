@@ -13,6 +13,7 @@
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       show-battery-percentage = true;
+      text-scaling-factor = 1.5;
     };
 
     "org/gnome/desktop/input-sources" = {
