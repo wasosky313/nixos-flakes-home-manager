@@ -4,6 +4,11 @@
   imports =
     [
       ./hardware-configuration.nix
+      ./modules/services.nix
+      ./modules/packages.nix
+      ./modules/programs.nix
+      ./modules/rkvm-client.nix
+      ./modules/vsftpd.nix
     ];
 
   boot.loader = {
@@ -17,6 +22,12 @@
     firewall = {
       enable = true;
       allowedTCPPorts = [ 22 ]; # SSH
+      allowedTCPPortRanges = [
+        { from = 1714; to = 1764; } # GNOME Connect
+      ];
+      allowedUDPPortRanges = [
+        { from = 1714; to = 1764; } # GNOME Connect
+      ];
     };
   };
 
@@ -32,48 +43,6 @@
   };
 
   nixpkgs.config.allowUnfree = true;
-
-  services = {
-    xserver.enable = true;
-    displayManager.gdm.enable = true;
-    desktopManager = {
-      gnome.enable = true;
-      # cosmic.enable = true;
-    };
-    openssh.enable = true;
-    flatpak.enable = true;
-    jellyfin = {
-      enable = false;
-      openFirewall = true;
-    };
-  };
-
-  systemd.services = {
-    flatpak-repo = {
-      wantedBy = [ "multi-user.target" ];
-      path = [ pkgs.flatpak ];
-      script = ''
-        flatpak remote-add --if-not-exists --no-gpg-verify flathub https://flathub.org/repo/flathub.flatpakrepo
-      '';
-    };
-  };
-
-  programs = {
-    zsh.enable = true;
-    firefox.enable = true;
-  };
-  
-  environment.systemPackages = with pkgs; [
-    vim
-    neovim
-    wget
-    git
-    google-chrome
-    vscode
-    brave
-    gnupg
-    fastfetch
-  ];
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
