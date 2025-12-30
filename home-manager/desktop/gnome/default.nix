@@ -44,6 +44,10 @@
       xkb-options = [ "caps:swapescape" ];
     };
 
+    "org/gnome/desktop/wm/preferences" = {
+      button-layout = "appmenu:minimize,maximize,close";
+    };
+
     "org/gnome/shell" = {
       favorite-apps = [
         "google-chrome.desktop"
