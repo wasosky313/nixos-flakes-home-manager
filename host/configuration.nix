@@ -7,8 +7,6 @@
       ./modules/services.nix
       ./modules/packages.nix
       ./modules/programs.nix
-      ./modules/rkvm-client.nix
-      ./modules/vsftpd.nix
     ];
 
   boot.loader = {
@@ -21,13 +19,6 @@
     networkmanager.enable = true;
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 22 ]; # SSH
-      allowedTCPPortRanges = [
-        { from = 1714; to = 1764; } # GNOME Connect
-      ];
-      allowedUDPPortRanges = [
-        { from = 1714; to = 1764; } # GNOME Connect
-      ];
     };
   };
 
