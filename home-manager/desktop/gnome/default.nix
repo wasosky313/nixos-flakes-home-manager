@@ -50,11 +50,13 @@
 
     "org/gnome/shell" = {
       favorite-apps = [
+        "org.gnome.Nautilus.desktop"
         "google-chrome.desktop"
         "code.desktop"
         "brave-browser.desktop"
-        "org.gnome.Nautilus.desktop"
-        "org.gnome.Console.desktop"
+        "terminator.desktop"
+        # "org.gnome.Console.desktop"
+        "Logseq.desktop"
       ];
       
       enabled-extensions = [
