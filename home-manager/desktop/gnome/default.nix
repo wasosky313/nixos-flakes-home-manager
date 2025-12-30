@@ -4,15 +4,17 @@
   home.packages = with pkgs; [
     pinentry-gnome3
     gnome-extension-manager
-    gnomeExtensions.appindicator
     gnomeExtensions.vitals
     gnomeExtensions.dash-to-dock
     gnomeExtensions.clipboard-indicator
     gnomeExtensions.lock-keys
-    gnomeExtensions.gsconnect
   ];
 
   dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      show-battery-percentage = true;
+    };
+
     "org/gnome/desktop/input-sources" = {
       sources = [
         (lib.gvariant.mkTuple [ "xkb" "us" ])
@@ -32,12 +34,10 @@
       ];
       
       enabled-extensions = [
-        "appindicatorsupport@rgcjonas.gmail.com"
         "Vitals@CoreCoding.com"
         "dash-to-dock@micxgx.gmail.com"
         "clipboard-indicator@tudmotu.com"
         "lockkeys@vaina.lt"
-        "gsconnect@andyholmes.github.io"
       ];
     };
   };
