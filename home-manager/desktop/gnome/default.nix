@@ -1,6 +1,10 @@
 { config, pkgs, lib, ... }:
 
 {
+  home.language = {
+    base = "pt_BR.UTF-8";
+  };
+
   home.packages = with pkgs; [
     pinentry-gnome3
     gnome-extension-manager
@@ -14,6 +18,10 @@
     "org/gnome/desktop/interface" = {
       show-battery-percentage = true;
       text-scaling-factor = 1.5;
+    };
+
+    "org/gnome/system/locale" = {
+      region = "pt_BR.UTF-8";
     };
 
     "org/gnome/desktop/input-sources" = {
