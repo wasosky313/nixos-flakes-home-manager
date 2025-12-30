@@ -8,16 +8,37 @@
   home.packages = with pkgs; [
     pinentry-gnome3
     gnome-extension-manager
+    gnome-tweaks
+    gnome-themes-extra
+    gnomeExtensions.appindicator
     gnomeExtensions.vitals
     gnomeExtensions.dash-to-dock
     gnomeExtensions.clipboard-indicator
     gnomeExtensions.lock-keys
   ];
 
+  # Config GTK for legacy applications like Nemo
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome-themes-extra;
+    };
+    gtk3.extraConfig = {
+      gtk-application-prefer-dark-theme = true;
+    };
+    gtk4.extraConfig = {
+      gtk-application-prefer-dark-theme = true;
+    };
+  };
+
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       show-battery-percentage = true;
       text-scaling-factor = 1.5;
+      color-scheme = "prefer-dark";
+      gtk-theme = "Adwaita-dark";
+
     };
 
     "org/gnome/system/locale" = {
@@ -33,13 +54,19 @@
       xkb-options = [ "caps:swapescape" ];
     };
 
+    "org/gnome/desktop/wm/preferences" = {
+      button-layout = "appmenu:minimize,maximize,close";
+    };
+
     "org/gnome/shell" = {
       favorite-apps = [
+        "org.gnome.Nautilus.desktop"
         "google-chrome.desktop"
         "code.desktop"
         "brave-browser.desktop"
-        "org.gnome.Nautilus.desktop"
+        "terminator.desktop"
         "org.gnome.Console.desktop"
+        # "Logseq.desktop"
       ];
       
       enabled-extensions = [
