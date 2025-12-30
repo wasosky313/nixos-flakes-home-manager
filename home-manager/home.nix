@@ -27,7 +27,6 @@
     mpv
     nemo
     terminator
-    rkvm
     telegram-desktop
     qbittorrent
     vlc
