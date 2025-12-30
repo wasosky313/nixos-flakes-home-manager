@@ -10,7 +10,7 @@
   };
 
   outputs = { self, nixpkgs, home-manager, ... }: {
-    nixosConfigurations.nixos-wasa = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.nixos-pelu = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./host/configuration.nix
@@ -19,7 +19,7 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            users.wasa = import ./home-manager/home.nix;
+            users.pelu = import ./home-manager/home.nix;
             backupFileExtension = "backup";
           };
         }

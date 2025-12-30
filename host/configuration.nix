@@ -4,7 +4,6 @@
   imports =
     [
       ./hardware-configuration.nix
-      ./modules/rkvm-client.nix
     ];
 
   boot.loader = {
@@ -23,7 +22,7 @@
 
   time.timeZone = "America/Sao_Paulo";
 
-  users.users.wasa = {
+  users.users.pelu = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
     shell = pkgs.zsh;
@@ -44,7 +43,7 @@
     openssh.enable = true;
     flatpak.enable = true;
     jellyfin = {
-      enable = true;
+      enable = false;
       openFirewall = true;
     };
   };

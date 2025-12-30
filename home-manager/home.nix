@@ -8,8 +8,8 @@
     ./desktop/gnome
   ];
 
-  home.username = "wasa";
-  home.homeDirectory = "/home/wasa";
+  home.username = "pelu";
+  home.homeDirectory = "/home/pelu";
   home.stateVersion = "25.11";
 
   programs.bash = {
