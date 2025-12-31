@@ -2,10 +2,11 @@
 
 {
   imports = [
-    ./common/direnv
-    ./common/git
-    ./common/oh-my-zsh
-    ./desktop/gnome
+    ../../common
+    ../../common/direnv
+    ../../common/oh-my-zsh
+    ../../desktop/gnome
+    ./git
   ];
 
   home.username = "pelu";
@@ -19,18 +20,8 @@
     };
   };
 
+  # Pacotes específicos para wasa
   home.packages = with pkgs; [ 
-    lazydocker
-    lazygit
-    libreoffice
-    logseq
-    mpv
-    nemo
-    terminator
-    telegram-desktop
-    qbittorrent
-    vlc
-    postgresql_17
+  # Adicione pacotes específicos que wasa precisa
   ];
 }
-

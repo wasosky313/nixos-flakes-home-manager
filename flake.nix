@@ -19,7 +19,8 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            users.pelu = import ./home-manager/home.nix;
+            users.pelu = import ./home-manager/users/pelu/home.nix;
+            users.wasa = import ./home-manager/users/wasa/home.nix;
             backupFileExtension = "backup";
           };
         }
