@@ -9,6 +9,7 @@
       ./modules/programs.nix
       ./modules/rkvm-client.nix
       ./modules/vsftpd.nix
+      ./modules/docker.nix
     ];
 
   boot.loader = {
