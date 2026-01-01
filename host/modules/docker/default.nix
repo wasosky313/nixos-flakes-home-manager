@@ -8,4 +8,10 @@
   };
 
   users.users.wasa.extraGroups = [ "docker" ];
+
+  # Declarative containers
+  virtualisation.oci-containers = {
+    backend = "docker";
+    containers = import ./containers.nix;
+  };
 }
