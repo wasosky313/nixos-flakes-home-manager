@@ -3,6 +3,7 @@
 {
   imports = [
     ./common/direnv
+    ./common/flatpak
     ./common/git
     ./common/oh-my-zsh
     ./desktop/gnome
@@ -16,16 +17,6 @@
     enable = true;
     shellAliases = {
       btw = "echo i use nixos, btw";
-    };
-  };
-
-  services.flatpak = {
-    packages = [
-      "org.telegram.desktop"
-    ];
-    update.auto = {
-      enable = true;
-      onCalendar = "weekly";
     };
   };
 
