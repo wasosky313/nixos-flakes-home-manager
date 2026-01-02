@@ -19,6 +19,16 @@
     };
   };
 
+  services.flatpak = {
+    packages = [
+      "org.telegram.desktop"
+    ];
+    update.auto = {
+      enable = true;
+      onCalendar = "weekly";
+    };
+  };
+
   home.packages = with pkgs; [ 
     lazydocker
     lazygit
@@ -28,7 +38,7 @@
     nemo
     terminator
     rkvm
-    telegram-desktop
+    # telegram-desktop # usando via flatpak
     qbittorrent
     vlc
     postgresql_17

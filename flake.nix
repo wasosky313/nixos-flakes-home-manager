@@ -7,9 +7,10 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }: {
+  outputs = { self, nixpkgs, home-manager, nix-flatpak, ... }: {
     nixosConfigurations.nixos-wasa = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -21,6 +22,7 @@
             useUserPackages = true;
             users.wasa = import ./home-manager/home.nix;
             backupFileExtension = "backup";
+            sharedModules = [ nix-flatpak.homeManagerModules.nix-flatpak ];
           };
         }
       ];

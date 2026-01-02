@@ -10,10 +10,6 @@
     };
     openssh.enable = true;
     flatpak.enable = true;
-    jellyfin = {
-      enable = true;
-      openFirewall = true;
-    };
   };
 
   systemd.services = {
@@ -21,7 +17,7 @@
       wantedBy = [ "multi-user.target" ];
       path = [ pkgs.flatpak ];
       script = ''
-        flatpak remote-add --if-not-exists --no-gpg-verify flathub https://flathub.org/repo/flathub.flatpakrepo
+        flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
       '';
     };
   };

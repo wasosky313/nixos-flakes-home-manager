@@ -22,9 +22,16 @@
     networkmanager.enable = true;
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 22 ]; # SSH
+      allowedTCPPorts = [ 
+        22    # SSH
+        8096  # Jellyfin HTTP
+      ];
       allowedTCPPortRanges = [
         { from = 1714; to = 1764; } # GNOME Connect
+      ];
+      allowedUDPPorts = [
+        1900  # Jellyfin service discovery
+        7359  # Jellyfin client discovery
       ];
       allowedUDPPortRanges = [
         { from = 1714; to = 1764; } # GNOME Connect
