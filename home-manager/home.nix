@@ -10,7 +10,7 @@
 
   home.username = "wasa";
   home.homeDirectory = "/home/wasa";
-  home.stateVersion = "25.11";
+  home.stateVersion = "26.05";
 
   programs.bash = {
     enable = true;
@@ -38,7 +38,7 @@
     nemo
     terminator
     rkvm
-    # telegram-desktop # usando via flatpak
+    # telegram-desktop # using via flatpak
     qbittorrent
     vlc
     postgresql_17
