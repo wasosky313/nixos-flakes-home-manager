@@ -24,7 +24,15 @@
       enable = true;
       allowedTCPPorts = [ 
         22    # SSH
+        8080  # Redpanda Console
+        8081  # Redpanda Schema Registry
+        8082  # Redpanda Pandaproxy
         8096  # Jellyfin HTTP
+        8090  # web qbittorent remote
+        9092  # Redpanda Kafka (external)
+        9644  # Redpanda Admin API
+        28082 # Redpanda Pandaproxy (internal)
+        29092 # Redpanda Kafka (internal)
       ];
       allowedTCPPortRanges = [
         { from = 1714; to = 1764; } # GNOME Connect
