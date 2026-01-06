@@ -3,6 +3,7 @@
 {
   imports = [
     ./common/direnv
+    ./common/flatpak
     ./common/git
     ./common/oh-my-zsh
     ./desktop/gnome
@@ -10,7 +11,7 @@
 
   home.username = "wasa";
   home.homeDirectory = "/home/wasa";
-  home.stateVersion = "25.11";
+  home.stateVersion = "26.05";
 
   programs.bash = {
     enable = true;
@@ -28,10 +29,11 @@
     nemo
     terminator
     rkvm
-    telegram-desktop
+    # telegram-desktop # using via flatpak
     qbittorrent
     vlc
     postgresql_17
+    element-desktop  # Matrix client with voice/video calls
   ];
 }
 
