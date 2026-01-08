@@ -21,6 +21,7 @@
   };
 
   home.packages = with pkgs; [ 
+    dbeaver-bin
     lazydocker
     lazygit
     libreoffice

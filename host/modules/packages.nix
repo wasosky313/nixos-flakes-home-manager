@@ -7,7 +7,7 @@
     wget
     git
     google-chrome
-    vscode
+    vscode-fhs
     brave
     gnupg
     fastfetch
