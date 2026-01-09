@@ -21,6 +21,7 @@
   };
 
   home.packages = with pkgs; [ 
+    bruno
     dbeaver-bin
     lazydocker
     lazygit
