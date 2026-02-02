@@ -23,6 +23,7 @@
   home.packages = with pkgs; [ 
     bruno
     dbeaver-bin
+    fzf
     lazydocker
     lazygit
     libreoffice
@@ -36,6 +37,7 @@
     vlc
     postgresql_17
     element-desktop  # Matrix client with voice/video calls
+    zoxide
   ];
 }
 

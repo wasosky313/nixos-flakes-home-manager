@@ -14,9 +14,15 @@
         "git"
         "docker"
         "kubectl"
+        "fzf"
       ];
       theme = "robbyrussell";
     };
+
+    # Inicializar zoxide com completion e fzf
+    initExtra = ''
+      eval "$(zoxide init zsh)"
+    '';
 
     plugins = [
       {
