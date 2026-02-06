@@ -20,9 +20,7 @@
     };
 
     # Inicializar zoxide com completion e fzf
-    initExtra = ''
-      eval "$(zoxide init zsh)"
-    '';
+    initContent = "eval \"$(zoxide init zsh)\";";
 
     plugins = [
       {
