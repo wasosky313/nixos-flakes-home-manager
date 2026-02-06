@@ -7,6 +7,7 @@
     ./common/git
     ./common/oh-my-zsh
     ./desktop/gnome
+    ./desktop/cosmic
   ];
 
   home.username = "wasa";
