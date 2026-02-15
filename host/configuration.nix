@@ -17,6 +17,9 @@
     efi.canTouchEfiVariables = true;
   };
 
+  # Use the latest kernel
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   networking = {
     hostName = "nixos";
     networkmanager.enable = true;
