@@ -63,6 +63,12 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  # Suporte para jogos com Proton
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true; # Necessário para jogos Windows via Proton
+  };
+
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
   ];
