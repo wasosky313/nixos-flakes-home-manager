@@ -19,6 +19,9 @@
 
   # Use the latest kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  
+  # Driver melhorado para controles Xbox via Bluetooth
+  # boot.extraModulePackages = with config.boot.kernelPackages; [ xpadneo ];
 
   networking = {
     hostName = "nixos";
