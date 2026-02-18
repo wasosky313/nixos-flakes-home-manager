@@ -5,6 +5,7 @@
     # COSMIC extension applets
     cosmic-applets
     cosmic-ext-applet-minimon
+    cosmic-ext-applet-caffeine
     
     cosmic-ext-tweaks
     

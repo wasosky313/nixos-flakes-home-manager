@@ -25,6 +25,7 @@
     bruno
     dbeaver-bin
     fzf
+    htop
     lazydocker
     lazygit
     libreoffice
