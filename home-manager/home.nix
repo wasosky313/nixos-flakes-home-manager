@@ -26,6 +26,7 @@
     dbeaver-bin
     fzf
     htop
+    p7zip
     lazydocker
     lazygit
     libreoffice
