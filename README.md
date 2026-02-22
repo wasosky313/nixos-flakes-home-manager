@@ -16,6 +16,23 @@
 ## Reference
 - https://www.tonybtw.com/tutorial/nixos-from-scratch/
 
+## Environment Variables
+
+**Using direnv (recommended):**
+```bash
+direnv allow  # This will load .envrc and automatically source .env
+direnv reload # This reload env changes
+```
+
+**Manual source:**
+```bash
+source .env
+```
+
+### ZeroTier Network Configuration
+`ZEROTIER_NETWORK_ID` environment variable is used to configure which ZeroTier network to join.
+
+
 TODO
  - manage secrets (sops-nix or something like this)
  - manage new pkgs

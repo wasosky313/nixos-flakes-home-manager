@@ -1,5 +1,8 @@
 { config, lib, pkgs, ... }:
 
+let
+  settings = import ../settings.nix;
+in
 {
   services = {
     xserver.enable = true;
@@ -10,7 +13,11 @@
     };
     openssh.enable = true;
     flatpak.enable = true;
-  };
+    zerotierone = {
+      enable = true;
+      joinNetworks = [settings.zerotierNetworkId];
+    };
+};
 
   systemd.services = {
     flatpak-repo = {
