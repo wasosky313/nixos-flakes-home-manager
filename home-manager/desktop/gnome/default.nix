@@ -12,6 +12,7 @@
     gnomeExtensions.clipboard-indicator
     gnomeExtensions.lock-keys
     gnomeExtensions.gsconnect
+    gnomeExtensions.forge
   ];
 
   # Config GTK for legacy applications like Nemo
@@ -66,6 +67,7 @@
         "clipboard-indicator@tudmotu.com"
         "lockkeys@vaina.lt"
         "gsconnect@andyholmes.github.io"
+        "forge@jmmaranan.com"
       ];
     };
   };
