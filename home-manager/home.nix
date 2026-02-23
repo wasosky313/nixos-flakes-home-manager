@@ -40,7 +40,6 @@
     vlc
     postgresql_17
     element-desktop  # Matrix client with voice/video calls
-    zapzap
     zoxide
   ];
 }
