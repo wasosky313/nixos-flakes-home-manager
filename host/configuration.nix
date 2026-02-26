@@ -25,7 +25,35 @@
 
   networking = {
     hostName = "nixos";
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+      ensureProfiles = {
+        profiles = {
+          Pelus = {
+            connection = {
+              id = "Pelus";
+              type = "wifi";
+              autoconnect = true;
+              autoconnect-priority = 999;
+            };
+            wifi = {
+              ssid = "Pelus";
+              mode = "infrastructure";
+            };
+            wifi-security = {
+              key-mgmt = "wpa-psk";
+              psk = "Pelu2702Pelu2702";
+            };
+            ipv4 = {
+              method = "auto";
+            };
+            ipv6 = {
+              method = "auto";
+            };
+          };
+        };
+      };
+    };
     firewall = {
       enable = true;
       allowedTCPPorts = [ 

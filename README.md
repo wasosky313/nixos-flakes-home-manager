@@ -35,6 +35,7 @@ source .env
 
 TODO
  - manage secrets (sops-nix or something like this)
+ - configurar usando agenix/sops-nix para secrets
  - manage new pkgs
  - binary cache
 
