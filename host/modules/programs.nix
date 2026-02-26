@@ -14,5 +14,16 @@
     };
     
     gamemode.enable = true; # Otimizações de performance para jogos
+
+    # For ssh vscode-server 
+    nix-ld.enable = true;
+    nix-ld.libraries = with pkgs; [
+      stdenv.cc.cc
+      zlib
+      openssl
+      libuuid
+      curl
+      icu
+   ];
   };
 }
