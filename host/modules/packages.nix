@@ -11,5 +11,6 @@
     brave
     gnupg
     fastfetch
+    jdk25
   ];
 }
