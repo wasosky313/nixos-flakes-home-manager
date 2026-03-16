@@ -98,6 +98,11 @@
   hardware.graphics = {
     enable = true;
     enable32Bit = true; # Necessário para jogos Windows via Proton
+    extraPackages = with pkgs; [
+    intel-media-driver # Essencial para o Jellyfin
+    vpl-gpu-rt         # Suporte para processamento de vídeo novo (OneVPL)
+    intel-compute-runtime # Para acelerar coisas com IA/OpenCL
+  ];
   };
 
   fonts.packages = with pkgs; [
