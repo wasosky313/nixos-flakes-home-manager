@@ -110,6 +110,12 @@
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # Força o driver VA-API da Intel (Arc/iGPU) para aceleração de vídeo no navegador
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "iHD";
+  };
+
   system.stateVersion = "25.11";
 
 }
