@@ -12,5 +12,6 @@
     gnupg
     fastfetch
     jdk25
+    davinci-resolve
   ];
 }
