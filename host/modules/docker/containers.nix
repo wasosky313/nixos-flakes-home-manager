@@ -87,4 +87,49 @@
       "--network=my_network"
     ];
   };
+
+  minio = {
+    image = "minio/minio";
+    ports = [
+      "4566:4566"
+      "4567:4567"
+    ];
+    volumes = [
+      "./tmp/buckets:/data"
+    ];
+    environment = {
+      MINIO_ROOT_USER = "minio_user";
+      MINIO_ROOT_PASSWORD = "minio_password";
+    };
+    cmd = [
+      "server"
+      "/data"
+      "--address"
+      ":4566"
+      "--console-address"
+      ":4567"
+    ];
+    extraOptions = [
+      "--network=my_network"
+    ];
+  };
+
+  createbuckets = {
+    image = "minio/mc";
+    dependsOn = [ "minio" ];
+    entrypoint = "/bin/sh";
+    cmd = [
+      "-c"
+      ''
+        /usr/bin/mc config host add myminio http://minio:4566 minio_user minio_password;
+        /usr/bin/mc rm -r --force myminio/buckets;
+        /usr/bin/mc mb myminio/buckets;
+        /usr/bin/mc policy download myminio/buckets;
+        exit 0;
+      ''
+    ];
+    extraOptions = [
+      "--network=my_network"
+    ];
+  };
 }
