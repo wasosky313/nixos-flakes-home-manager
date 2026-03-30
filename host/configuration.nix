@@ -19,6 +19,8 @@
 
   # Use the latest kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  services.xserver.videoDrivers = [ "modesetting" ];
   
   # Driver melhorado para controles Xbox via Bluetooth
   # boot.extraModulePackages = with config.boot.kernelPackages; [ xpadneo ];
@@ -102,6 +104,8 @@
     intel-media-driver # Essencial para o Jellyfin
     vpl-gpu-rt         # Suporte para processamento de vídeo novo (OneVPL)
     intel-compute-runtime # Para acelerar coisas com IA/OpenCL
+    vulkan-loader
+    vulkan-validation-layers
   ];
   };
 

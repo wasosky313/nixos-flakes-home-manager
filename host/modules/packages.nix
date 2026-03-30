@@ -13,5 +13,6 @@
     fastfetch
     jdk25
     davinci-resolve
+    protonup-qt
   ];
 }
